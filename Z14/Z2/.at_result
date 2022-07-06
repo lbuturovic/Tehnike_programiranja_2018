@@ -1,0 +1,154 @@
+{
+    "buildhost_description": {
+        "id": "lab002c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.cpp: In constructor ‘Skladiste::Skladiste(int)’:\nmain.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]\n     int kapacitet,br;\n                   ^~\nmain.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]\n     int kapacitet,br;\n         ^~~~~~~~~\nmain.cpp:59:14: warning:   when initialized here [-Wreorder]\n     explicit Skladiste(int kap): br(0),kapacitet(kap),\n              ^~~~~~~~~\nmain.cpp: In constructor ‘Skladiste::Skladiste(Skladiste&&)’:\nmain.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]\n     Spremnik** spremnici;\n                ^~~~~~~~~\nmain.cpp:56:19: warning:   ‘int Skladiste::br’ [-Wreorder]\n     int kapacitet,br;\n                   ^~\nmain.cpp:63:5: warning:   when initialized here [-Wreorder]\n     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}\n     ^~~~~~~~~\nmain.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]\n     int kapacitet,br;\n                   ^~\nmain.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]\n     int kapacitet,br;\n         ^~~~~~~~~\nmain.cpp:63:5: warning:   when initialized here [-Wreorder]\n     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}\n     ^~~~~~~~~\nmain.cpp: In member function ‘void Skladiste::UcitajIzDatoteke(std::__cxx11::string)’:\nmain.cpp:85:10: warning: unused variable ‘problem’ [-Wunused-variable]\n     bool problem=true;\n          ^~~~~~~\nmain.cpp: In copy constructor ‘Skladiste::Skladiste(const Skladiste&)’:\nmain.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]\n     Spremnik** spremnici;\n                ^~~~~~~~~\nmain.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]\n     int kapacitet,br;\n         ^~~~~~~~~\nmain.cpp:160:1: warning:   when initialized here [-Wreorder]\n Skladiste::Skladiste(const Skladiste &s) : spremnici(new Spremnik*[s.kapacitet]{}),\n ^~~~~~~~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "19",
+                "message": "'Skladiste::br' will be initialized after",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]     int kapacitet,br;                   ^~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "9",
+                "message": "'int Skladiste::kapacitet'",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]     int kapacitet,br;         ^~~~~~~~~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "59",
+                "col": "14",
+                "message": "when initialized here",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:59:14: warning:   when initialized here [-Wreorder]     explicit Skladiste(int kap): br(0),kapacitet(kap),              ^~~~~~~~~/tmp/buildservice/bs_3972/main.cpp: In constructor ‘Skladiste::Skladiste(Skladiste&&)’:",
+                "code": "explicit Skladiste(int kap): br(0),kapacitet(kap),"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "57",
+                "col": "16",
+                "message": "'Skladiste::spremnici' will be initialized after",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]     Spremnik** spremnici;                ^~~~~~~~~",
+                "code": "Spremnik** spremnici;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "19",
+                "message": "'int Skladiste::br'",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:19: warning:   ‘int Skladiste::br’ [-Wreorder]     int kapacitet,br;                   ^~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "63",
+                "col": "5",
+                "message": "when initialized here",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:63:5: warning:   when initialized here [-Wreorder]     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}     ^~~~~~~~~",
+                "code": "Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "19",
+                "message": "'Skladiste::br' will be initialized after",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]     int kapacitet,br;                   ^~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "9",
+                "message": "'int Skladiste::kapacitet'",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]     int kapacitet,br;         ^~~~~~~~~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "63",
+                "col": "5",
+                "message": "when initialized here",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:63:5: warning:   when initialized here [-Wreorder]     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}     ^~~~~~~~~/tmp/buildservice/bs_3972/main.cpp: In member function ‘void Skladiste::UcitajIzDatoteke(std::__cxx11::string)’:",
+                "code": "Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "85",
+                "col": "10",
+                "message": "unused variable 'problem'",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:85:10: warning: unused variable ‘problem’ [-Wunused-variable]     bool problem=true;          ^~~~~~~/tmp/buildservice/bs_3972/main.cpp: In copy constructor ‘Skladiste::Skladiste(const Skladiste&)’:",
+                "code": "bool problem=true;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "57",
+                "col": "16",
+                "message": "'Skladiste::spremnici' will be initialized after",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]     Spremnik** spremnici;                ^~~~~~~~~",
+                "code": "Spremnik** spremnici;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "56",
+                "col": "9",
+                "message": "'int Skladiste::kapacitet'",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]     int kapacitet,br;         ^~~~~~~~~",
+                "code": "int kapacitet,br;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "160",
+                "col": "1",
+                "message": "when initialized here",
+                "output": "/tmp/buildservice/bs_3972/main.cpp:160:1: warning:   when initialized here [-Wreorder] Skladiste::Skladiste(const Skladiste &s) : spremnici(new Spremnik*[s.kapacitet]{}), ^~~~~~~~~",
+                "code": "Skladiste::Skladiste(const Skladiste &s) : spremnici(new Spremnik*[s.kapacitet]{}),"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "1": {
+            "status": 4,
+            "run_result": {
+                "output": "",
+                "duration": 10,
+                "status": 2
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 1,
+    "time": 1560954831
+}

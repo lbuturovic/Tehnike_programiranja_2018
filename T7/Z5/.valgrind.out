@@ -1,0 +1,15 @@
+==10500== Memcheck, a memory error detector
+==10500== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10500== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==10500== Command: /rhome/l/lbuturovic1/workspace/TP/T7/Z5/.runme
+==10500== Parent PID: 10477
+==10500== 
+==10500== 
+==10500== HEAP SUMMARY:
+==10500==     in use at exit: 0 bytes in 0 blocks
+==10500==   total heap usage: 10 allocs, 10 frees, 74,111 bytes allocated
+==10500== 
+==10500== All heap blocks were freed -- no leaks are possible
+==10500== 
+==10500== For counts of detected and suppressed errors, rerun with: -v
+==10500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

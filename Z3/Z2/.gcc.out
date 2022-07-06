@@ -1,0 +1,4 @@
+/rhome/l/lbuturovic1/workspace/TP/Z3/Z2/main.cpp: In function ‘std::map<std::__cxx11::basic_string<char>, std::set<int> > KreirajIndeksPojmova(std::__cxx11::string)’:
+/rhome/l/lbuturovic1/workspace/TP/Z3/Z2/main.cpp:28:13: warning: unused variable ‘vel’ [-Wunused-variable]
+         int vel=0;
+             ^~~

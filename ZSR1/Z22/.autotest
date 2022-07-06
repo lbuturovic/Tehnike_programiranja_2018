@@ -1,0 +1,44 @@
+{
+    "id": 3983,
+    "name": "",
+    "language": "",
+    "required_compiler": "",
+    "preferred_compiler": "",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "",
+    "compiler_options_debug": "",
+    "compile": "false",
+    "run": "false",
+    "test": "false",
+    "debug": "false",
+    "profile": "false",
+    "test_specifications": [
+        {
+            "id": 1,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                ""
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

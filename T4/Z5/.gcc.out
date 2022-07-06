@@ -1,0 +1,6 @@
+/rhome/l/lbuturovic1/workspace/TP/T4/Z5/main.cpp: In instantiation of ‘std::vector<NekiTip> Presjek(std::vector<NekiTip>, std::vector<NekiTip>) [with NekiTip = double]’:
+/rhome/l/lbuturovic1/workspace/TP/T4/Z5/main.cpp:70:27:   required from here
+/rhome/l/lbuturovic1/workspace/TP/T4/Z5/main.cpp:12:24: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+             if(v1.at(i)==v2.at(j)) {
+/rhome/l/lbuturovic1/workspace/TP/T4/Z5/main.cpp:15:32: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                     if(v3.at(k)==v2.at(j)) nijesadrzan=false;

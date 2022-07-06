@@ -1,0 +1,24 @@
+==11074== Memcheck, a memory error detector
+==11074== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11074== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11074== Command: /rhome/l/lbuturovic1/workspace/TP/T1/Z4/.runme
+==11074== Parent PID: 11040
+==11074== 
+==11074== 
+==11074== Process terminating with default action of signal 1 (SIGHUP)
+==11074==    at 0x54D7081: read (read.c:27)
+==11074==    by 0x5454147: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:531)
+==11074==    by 0x54553F1: _IO_default_uflow (genops.c:380)
+==11074==    by 0x512B95C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==11074==    by 0x5139739: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==11074==    by 0x513BCCD: std::istream& std::istream::_M_extract<double>(double&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==11074==    by 0x108B76: main (main.cpp:9)
+==11074== 
+==11074== HEAP SUMMARY:
+==11074==     in use at exit: 0 bytes in 0 blocks
+==11074==   total heap usage: 2 allocs, 2 frees, 73,728 bytes allocated
+==11074== 
+==11074== All heap blocks were freed -- no leaks are possible
+==11074== 
+==11074== For counts of detected and suppressed errors, rerun with: -v
+==11074== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

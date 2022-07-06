@@ -1,0 +1,315 @@
+{
+    "buildhost_description": {
+        "id": "lab002c02",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": ""
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "3352": {
+            "status": 6,
+            "run_result": {
+                "output": "",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3353": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "bs_test_3353.cpp: In function ‘int main()’:\nbs_test_3353.cpp:33:21: error: ‘atan’ is not a member of ‘std’\n const double PI(4 * std::atan(1));\n                     ^~~\nbs_test_3353.cpp:34:36: error: ‘sin’ is not a member of ‘std’\n double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));\n                                    ^~~\nbs_test_3353.cpp:34:59: error: ‘TrapeznoPravilo’ was not declared in this scope\n double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));\n                                                           ^\nbs_test_3353.cpp:37:36: error: ‘cos’ is not a member of ‘std’\n double vrijednost4(TrapeznoPravilo(std::cos, 0, PI/50, 100));\n                                    ^~~\nbs_test_3353.cpp: In lambda function:\nbs_test_3353.cpp:38:63: error: ‘exp’ was not declared in this scope\n double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 1.1, 100));\n                                                               ^\nbs_test_3353.cpp: In lambda function:\nbs_test_3353.cpp:39:58: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));\n                                                          ^~~\nbs_test_3353.cpp:39:71: error: ‘cos’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));\n                                                                       ^~~\nbs_test_3353.cpp:39:88: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));\n                                                                                        ^~~",
+                "parsed_output": [
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 1,
+                        "col": "21",
+                        "message": "'atan' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:33:21: error: ‘atan’ is not a member of ‘std’ const double PI(4 * std::atan(1));                     ^~~",
+                        "code": "const double PI(4 * std::atan(1));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "36",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:34:36: error: ‘sin’ is not a member of ‘std’ double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));                                    ^~~",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "59",
+                        "message": "'TrapeznoPravilo' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:34:59: error: ‘TrapeznoPravilo’ was not declared in this scope double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));                                                           ^",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, 0, PI/50, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 5,
+                        "col": "36",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:37:36: error: ‘cos’ is not a member of ‘std’ double vrijednost4(TrapeznoPravilo(std::cos, 0, PI/50, 100));                                    ^~~/tmp/buildservice/bs_2786/bs_test_3353.cpp: In lambda function:",
+                        "code": "double vrijednost4(TrapeznoPravilo(std::cos, 0, PI/50, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 6,
+                        "col": "63",
+                        "message": "'exp' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:38:63: error: ‘exp’ was not declared in this scope double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 1.1, 100));                                                               ^/tmp/buildservice/bs_2786/bs_test_3353.cpp: In lambda function:",
+                        "code": "double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 1.1, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "58",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:39:58: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));                                                          ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "71",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:39:71: error: ‘cos’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));                                                                       ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "88",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3353.cpp:39:88: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));                                                                                        ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},0,PI/50,100));"
+                    }
+                ]
+            }
+        },
+        "3354": {
+            "status": 6,
+            "run_result": {
+                "output": "",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3355": {
+            "status": 6,
+            "run_result": {
+                "output": "",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3356": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "bs_test_3356.cpp: In function ‘int main()’:\nbs_test_3356.cpp:33:21: error: ‘atan’ is not a member of ‘std’\n const double PI(4 * std::atan(1));\n                     ^~~\nbs_test_3356.cpp:34:36: error: ‘sin’ is not a member of ‘std’\n double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));\n                                    ^~~\nbs_test_3356.cpp:34:58: error: ‘TrapeznoPravilo’ was not declared in this scope\n double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));\n                                                          ^\nbs_test_3356.cpp:37:36: error: ‘cos’ is not a member of ‘std’\n double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 100));\n                                    ^~~\nbs_test_3356.cpp: In lambda function:\nbs_test_3356.cpp:38:63: error: ‘exp’ was not declared in this scope\n double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 100));\n                                                               ^\nbs_test_3356.cpp: In lambda function:\nbs_test_3356.cpp:39:58: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));\n                                                          ^~~\nbs_test_3356.cpp:39:71: error: ‘cos’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));\n                                                                       ^~~\nbs_test_3356.cpp:39:88: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));\n                                                                                        ^~~",
+                "parsed_output": [
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 1,
+                        "col": "21",
+                        "message": "'atan' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:33:21: error: ‘atan’ is not a member of ‘std’ const double PI(4 * std::atan(1));                     ^~~",
+                        "code": "const double PI(4 * std::atan(1));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "36",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:34:36: error: ‘sin’ is not a member of ‘std’ double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));                                    ^~~",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "58",
+                        "message": "'TrapeznoPravilo' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:34:58: error: ‘TrapeznoPravilo’ was not declared in this scope double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));                                                          ^",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 5,
+                        "col": "36",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:37:36: error: ‘cos’ is not a member of ‘std’ double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 100));                                    ^~~/tmp/buildservice/bs_2786/bs_test_3356.cpp: In lambda function:",
+                        "code": "double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 6,
+                        "col": "63",
+                        "message": "'exp' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:38:63: error: ‘exp’ was not declared in this scope double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 100));                                                               ^/tmp/buildservice/bs_2786/bs_test_3356.cpp: In lambda function:",
+                        "code": "double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "58",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:39:58: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));                                                          ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "71",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:39:71: error: ‘cos’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));                                                                       ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "88",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3356.cpp:39:88: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));                                                                                        ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,100));"
+                    }
+                ]
+            }
+        },
+        "3357": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "bs_test_3357.cpp: In function ‘int main()’:\nbs_test_3357.cpp:33:21: error: ‘atan’ is not a member of ‘std’\n const double PI(4 * std::atan(1));\n                     ^~~\nbs_test_3357.cpp:34:36: error: ‘sin’ is not a member of ‘std’\n double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));\n                                    ^~~\nbs_test_3357.cpp:34:56: error: ‘TrapeznoPravilo’ was not declared in this scope\n double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));\n                                                        ^\nbs_test_3357.cpp:37:36: error: ‘cos’ is not a member of ‘std’\n double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 2));\n                                    ^~~\nbs_test_3357.cpp: In lambda function:\nbs_test_3357.cpp:38:63: error: ‘exp’ was not declared in this scope\n double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 2));\n                                                               ^\nbs_test_3357.cpp: In lambda function:\nbs_test_3357.cpp:39:58: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));\n                                                          ^~~\nbs_test_3357.cpp:39:71: error: ‘cos’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));\n                                                                       ^~~\nbs_test_3357.cpp:39:88: error: ‘sin’ is not a member of ‘std’\n double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));\n                                                                                        ^~~",
+                "parsed_output": [
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 1,
+                        "col": "21",
+                        "message": "'atan' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:33:21: error: ‘atan’ is not a member of ‘std’ const double PI(4 * std::atan(1));                     ^~~",
+                        "code": "const double PI(4 * std::atan(1));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "36",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:34:36: error: ‘sin’ is not a member of ‘std’ double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));                                    ^~~",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 2,
+                        "col": "56",
+                        "message": "'TrapeznoPravilo' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:34:56: error: ‘TrapeznoPravilo’ was not declared in this scope double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));                                                        ^",
+                        "code": "double vrijednost1(TrapeznoPravilo(std::sin, -PI, PI, 2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 5,
+                        "col": "36",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:37:36: error: ‘cos’ is not a member of ‘std’ double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 2));                                    ^~~/tmp/buildservice/bs_2786/bs_test_3357.cpp: In lambda function:",
+                        "code": "double vrijednost4(TrapeznoPravilo(std::cos, -PI, PI, 2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 6,
+                        "col": "63",
+                        "message": "'exp' was not declared in this scope",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:38:63: error: ‘exp’ was not declared in this scope double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 2));                                                               ^/tmp/buildservice/bs_2786/bs_test_3357.cpp: In lambda function:",
+                        "code": "double vrijednost5(TrapeznoPravilo([](double x) { return exp(x); }, 1, 10, 2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "58",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:39:58: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));                                                          ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "71",
+                        "message": "'cos' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:39:71: error: ‘cos’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));                                                                       ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));"
+                    },
+                    {
+                        "type": "error",
+                        "file": "TEST_CODE",
+                        "line": 7,
+                        "col": "88",
+                        "message": "'sin' is not a member of 'std'",
+                        "output": "/tmp/buildservice/bs_2786/bs_test_3357.cpp:39:88: error: ‘sin’ is not a member of ‘std’ double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));                                                                                        ^~~",
+                        "code": "double vrijednost6(TrapeznoPravilo ([](double x) {return std::sin (x)*std::cos (x*x) * std::sin (x*x*x);},-PI,PI,2));"
+                    }
+                ]
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1554741030
+}

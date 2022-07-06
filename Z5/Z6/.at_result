@@ -1,0 +1,173 @@
+{
+    "buildhost_description": {
+        "id": "lab002c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": ""
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "47": {
+            "status": 1,
+            "run_result": {
+                "output": "0 0\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "48": {
+            "status": 6,
+            "run_result": {
+                "output": "1 0 0\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "49": {
+            "status": 6,
+            "run_result": {
+                "output": "1 1 0\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "50": {
+            "status": 6,
+            "run_result": {
+                "output": "3 3\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "51": {
+            "status": 1,
+            "run_result": {
+                "output": "3.6\n13.3\n4 4\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "52": {
+            "status": 1,
+            "run_result": {
+                "output": "3.6\nNeispravna pozicija\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "53": {
+            "status": 1,
+            "run_result": {
+                "output": "Neispravna pozicija\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "54": {
+            "status": 1,
+            "run_result": {
+                "output": "Neispravna pozicija\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "55": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "/tmp/ccRzSK8E.o: In function `main':\nbs_test_55.cpp:77: undefined reference to `DatotecniKontejner<double>::Sortiraj(std::function<bool ()(double const&, double const&)>)'\ncollect2: error: ld returned 1 exit status"
+            }
+        },
+        "56": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "/tmp/ccGCNTBC.o: In function `main':\nbs_test_56.cpp:75: undefined reference to `DatotecniKontejner<double>::Sortiraj(std::function<bool ()(double const&, double const&)>)'\ncollect2: error: ld returned 1 exit status"
+            }
+        },
+        "57": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "/tmp/ccuTMUnn.o: In function `main':\nbs_test_57.cpp:76: undefined reference to `DatotecniKontejner<char>::Sortiraj(std::function<bool ()(char const&, char const&)>)'\ncollect2: error: ld returned 1 exit status"
+            }
+        },
+        "58": {
+            "status": 3,
+            "run_result": [],
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 2,
+                "output": "/tmp/cc7XuOt7.o: In function `main':\nbs_test_58.cpp:78: undefined reference to `DatotecniKontejner<short>::Sortiraj(std::function<bool ()(short const&, short const&)>)'\ncollect2: error: ld returned 1 exit status"
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1561044160
+}

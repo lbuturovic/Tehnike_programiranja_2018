@@ -1,0 +1,43 @@
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp: In constructor ‘Skladiste::Skladiste(int)’:
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]
+     int kapacitet,br;
+                   ^~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]
+     int kapacitet,br;
+         ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:59:14: warning:   when initialized here [-Wreorder]
+     explicit Skladiste(int kap): br(0),kapacitet(kap),
+              ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp: In constructor ‘Skladiste::Skladiste(Skladiste&&)’:
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]
+     Spremnik** spremnici;
+                ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:19: warning:   ‘int Skladiste::br’ [-Wreorder]
+     int kapacitet,br;
+                   ^~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:63:5: warning:   when initialized here [-Wreorder]
+     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}
+     ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:19: warning: ‘Skladiste::br’ will be initialized after [-Wreorder]
+     int kapacitet,br;
+                   ^~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]
+     int kapacitet,br;
+         ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:63:5: warning:   when initialized here [-Wreorder]
+     Skladiste(Skladiste &&s) : spremnici(s.spremnici), br(s.br), kapacitet(s.kapacitet){}
+     ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp: In member function ‘void Skladiste::UcitajIzDatoteke(std::__cxx11::string)’:
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:85:10: warning: unused variable ‘problem’ [-Wunused-variable]
+     bool problem=true;
+          ^~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp: In copy constructor ‘Skladiste::Skladiste(const Skladiste&)’:
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:57:16: warning: ‘Skladiste::spremnici’ will be initialized after [-Wreorder]
+     Spremnik** spremnici;
+                ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:56:9: warning:   ‘int Skladiste::kapacitet’ [-Wreorder]
+     int kapacitet,br;
+         ^~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z14/Z2/main.cpp:161:1: warning:   when initialized here [-Wreorder]
+ Skladiste::Skladiste(const Skladiste &s) : spremnici(new Spremnik*[s.kapacitet]{}),
+ ^~~~~~~~~

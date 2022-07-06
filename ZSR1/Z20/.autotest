@@ -1,0 +1,520 @@
+{
+    "id": 7219,
+    "name": "Tehnike programiranja (2016\/2017), Zadaci za samostalan rad 1, zadatak 20",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 101,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/   AT1 - test konstruktora sa jednim parametrom\n    try {\n        std::cout << std::boolalpha << std::is_convertible<double, Kugla>::value << std::endl;\n        Kugla k;\n        k.Ispisi();\n        std::cout << std::endl;\n        Kugla k1(5);\n        k1.Ispisi();\n        std::cout << std::endl;\n        Kugla k2(-1);\n\n    }\n    catch(std::domain_error ex){\n        std::cout << \"OK \" << ex.what();\n    }\n    catch(...){\n        std::cout << \"NOT OK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <type_traits>\n",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false\\n{(0,0,0),0}\\n{(0,0,0),5}\\nOK Ilegalan poluprecnik"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 102,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(skriveni)    AT2 - Test konstruktora sa 4 parametra\n    try{\n        Kugla k1(5,5,5,5);\n        k1.Ispisi();\n        std::cout << std::endl;\n        Kugla k2 = {-5,-5,-5,2};\n        k2.Ispisi();\n        std::cout << std::endl;\n        Kugla k3(-1,1,-1,-1);\n\n    }\n    catch(std::domain_error ex){\n        std::cout << \"OK \" << ex.what();\n    }\n    catch(...){\n        std::cout << \"NOT OK\";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "{(5,5,5),5}\\n{(-5,-5,-5),2}\\nOK Ilegalan poluprecnik"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 103,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(skriveni)\n    \/\/AT3 - Test konstruktra sa tuple-om\n\n    try{\n        std::cout << std::boolalpha << pretvorba_tipa_vise_argumenata<Kugla, std::tuple<double, double, double>, double>::value << std::endl;\n        Kugla k1(std::make_tuple(5,5,5),5);\n        k1.Ispisi();\n        std::cout << std::endl;\n        Kugla k2 = {-5,-5,-5,2};\n        k2.Ispisi();\n        std::cout << std::endl;\n        Kugla k3(-1,1,-1,-1);\n\n    }\n    catch(std::domain_error ex){\n        std::cout << \"OK \" << ex.what();\n    }\n    catch(...){\n        std::cout << \"NOT OK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <type_traits>\n#include <iomanip>\n\ntemplate <typename To_, typename... From_>\nclass pretvorba_tipa_vise_argumenata {\nprivate:\n    template <typename To>\n    struct testKonstrukcije {\n        testKonstrukcije(To);\n    };\n\n    template <typename To, typename... From>\n    struct pomocna {};\n\n    template <typename To, typename... From>\n    static auto test(pomocna<To, From...>)\n    -> decltype(testKonstrukcije<To>({std::declval<From>()...}), std::true_type());\n    static auto test(...)\n    -> std::false_type;\n\npublic:\n    static constexpr bool value = decltype(test(pomocna<To_, From_...>()))::value;\n};",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false\\n{(5,5,5),5}\\n{(-5,-5,-5),2}\\nOK Ilegalan poluprecnik"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 104,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(skriveni) AT4 - Test metoda DajX, DajY, DajZ i DajCentar\n\n    try{\n        const Kugla k(std::make_tuple(1,2,3), 10.5);\n        std:: cout << std::fixed << std::setprecision(3);\n        std::cout << \"Centar: \" << k.DajX() << \" \" << k.DajY() << \" \"<< k.DajZ();\n        std::cout << \"\\nPoluprecnik: \" << k.DajPoluprecnik();\n        Kugla k1 = Kugla(4,3,2,1);\n        std::tuple<double, double, double> centar(k1.DajCentar());\n        std::cout << \"\\nNovi centar: \" <<std::get<0>(centar) << \" \" << std::get<1>(centar) << \" \" << std::get<2>(centar);\n\n    }\n    catch(...) {\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>\n",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Centar: 1.000 2.000 3.000\\nPoluprecnik: 10.500\\nNovi centar: 4.000 3.000 2.000"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 105,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": " \/\/(skriveni) AT5 - Test metoda DajPovrsinu,  DajZapreminu i Ispisi i RastojanjeCentara\n\n    try{\n        const Kugla k(std::make_tuple(8,16,32), 30.3);\n        const Kugla k1(std::make_tuple(8,-1,30.3), 18.01);\n        std::cout << std::fixed << std::setprecision(5);\n        std::cout << \"Povrsina kugle k: \" << k.DajPovrsinu()\n                  << \"\\nZapremina kugle k : \" << k.DajZapreminu();\n        std::cout << std::endl;\n        std::cout << \"Povrsina kugle k1: \" << k.DajPovrsinu()\n                  << \"\\nZapremina kugle k1: \" << k.DajZapreminu();\n        std::cout << \"\\nRastojanje centara kugle k i k1: \"\n                  << RastojanjeCentara(k,k1);\n        std::cout << std::endl << std::defaultfloat;\n        k.Ispisi();\n        std::cout << \"\\nEND\";\n\n    }\n    catch(...) {\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Povrsina kugle k: 11537.05920\\nZapremina kugle k : 116524.29789\\nPovrsina kugle k1: 11537.05920\\nZapremina kugle k1: 116524.29789\\nRastojanje centara kugle k i k1: 17.08479\\n{(8,16,32),30.3}\\nEND"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 106,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "        \/\/(skriveni) AT6 - Test medota PostaviX, PostaviY, PostaviZ\n\n\n    try{\n        Kugla k(std::make_tuple(8,16,32), 30.3);\n        k.PostaviX(-1).PostaviY(-2).PostaviZ(-3);\n        k.Ispisi();\n    }\n    catch(...) {\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <tuple>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "{(-1,-2,-3),30.3}\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 107,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(skriveni) AT7 - Test metode postavi poluprecnik\n\n    try{\n        Kugla k(std::make_tuple(8,16,32), 30.3);\n        k.PostaviPoluprecnik(20.289);\n        k.Ispisi();\n        std::cout << std::endl;\n        k.PostaviPoluprecnik(-0.0000001);\n        std:cout << \"Ovo se ne smije ispisati.\";\n\n    }\n    catch(std::domain_error ex){\n        std::cout << \"OK \" << ex.what();\n    }\n    catch(...) {\n        std::cout << \"NOT OK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <tuple>\n#include <stdexcept>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "{(8,16,32),20.289}\\nOK Ilegalan poluprecnik"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 108,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(skriveni) AT8 - Test metoda PostaviCentar\n\n    try{\n        Kugla k(20);\n        k.PostaviCentar(1.5,10,25);\n        k.Ispisi();\n        std::cout << std::endl;\n        k.PostaviCentar(std::make_tuple(25,10,1.5));\n        k.Ispisi();\n    }\n    catch(...){\n       std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "{(1.5,10,25),20}\\n{(25,10,1.5),20}"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 109,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(skriveni) AT9 - Test metode Transliraj\n\n    try{\n        Kugla k(10,10,10,20);\n        k.Transliraj(20.25, 1e-10,-18.31);\n        k.Transliraj(-20.25, -1e-10,18.31);\n        k.Ispisi();\n    }\n    catch(...){\n       std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "{(10,10,10),20}\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 110,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(neaktivni) AT10 - Test funkcije DaLiSuIdenticne\n\n    try{\n        Kugla k1(1,2,3+1e-15, 4+1e-15), k2(1,2,3,4);\n        std::cout << std::boolalpha << DaLiSuIdenticne(k1,k2);\n        Kugla k3(1,2,3,4.001);\n        std::cout << \" \" << DaLiSuIdenticne(k3,k2);\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "true false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 111,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "       \/\/(neaktivni) AT11 - Test funkcije DaLiSuPodudarne\n     try{\n        Kugla k1(1,2,3+1e-15, 4+1e-15), k2(1,2,3,4);\n        std::cout << std::boolalpha << DaLiSuPodudarne(k1,k2);\n        Kugla k3(1,2,3,4.001);\n        std::cout << \" \" << DaLiSuPodudarne(k3,k2);\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "true false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 112,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/(neaktivni) AT12 - Test funkcije DaLiSuKoncentricne\n\n    try{\n        Kugla k1(1,2,3+1e-15, 4+1e-15), k2(1,2,3,4);\n        std::cout << std::boolalpha << DaLiSuKoncentricne(k1,k2);\n        Kugla k3(1,2,3.01,4.001);\n        std::cout << \" \" << DaLiSuKoncentricne(k3,k2);\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "true false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 113,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(neaktivni)    AT13 - Test funckije DaLiSeDodirujuIzvana\n\n    try{\n        Kugla k1(1,0.3,0.4,0.3), k2(1,0.30000001,0.9,0.2);\n        std::cout << std::boolalpha << DaLiSeDodirujuIzvana(k1,k2);\n        Kugla k3(1,0.3,0.9,0.19);\n        std::cout << \" \" << DaLiSeDodirujuIzvana(k3,k1);\n        Kugla k4(1,0.3,0.9,0.2001);\n        std::cout << \" \" << DaLiSeDodirujuIzvana(k4,k1);\n        Kugla k5(1,0.3,0.9,0.2);\n        std::cout << \" \" << DaLiSeDodirujuIzvana(k5,k1);\n        Kugla k6(1,0.3,0.3,0.3);\n        std::cout << \" \" << DaLiSeDodirujuIzvana(k6,k1);\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "true false false true false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 114,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(neaktivni)    AT14 - Test funkcije DaLiSeDodirujuIznutra\n\n    try{\n        Kugla k1(1,0.3,0.4,0.3), k2(1,0.3,0.9,0.2);\n        std::cout << std::boolalpha << DaLiSeDodirujuIznutra(k1,k2);\n        Kugla k3(1,0.3,0.9,0.19);\n        std::cout << \" \" << DaLiSeDodirujuIznutra(k3,k1);\n        Kugla k4(1,0.3,0.9,0.2001);\n        std::cout << \" \" << DaLiSeDodirujuIznutra(k4,k1);\n        Kugla k5(1,0.3,0.3+1e-14,0.4);\n        std::cout << \" \" << DaLiSeDodirujuIznutra(k5,k1);\n        Kugla k6(1,0.3,0.3,0.3);\n        std::cout << \" \" << DaLiSeDodirujuIznutra(k6,k1);\n        Kugla k7(1,0.3,0.4,0.3);\n        std::cout << \" \" << DaLiSeDodirujuIznutra(k7,k1);\n\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false false false true false false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 115,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(neaktivni)    AT15 - Test funkcije DaLiSePreklapaju\n\n    try{\n        Kugla k1(1,0.3,0.4,0.3), k2(1,0.3,0.9,0.2);\n        std::cout << std::boolalpha << DaLiSePreklapaju(k1,k2);\n        Kugla k3(1,0.3,0.9,0.19);\n        std::cout << \" \" << DaLiSePreklapaju(k3,k1);\n        Kugla k4(1,0.3,0.9,0.2001);\n        std::cout << \" \" << DaLiSePreklapaju(k4,k1);\n        Kugla k5(1,0.3,0.3+1e-14,0.4);\n        std::cout << \" \" << DaLiSePreklapaju(k5,k1);\n        Kugla k6(1,0.3,0.3,0.3);\n        std::cout << \" \" << DaLiSePreklapaju(k6,k1);\n        Kugla k7(1,0.3,0.4,0.3);\n        std::cout << \" \" << DaLiSePreklapaju(k7,k1);\n\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false false true true true true\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 116,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/AT16 - Test funkcije DaLiSeSijeku\n\n    try{\n        Kugla k1(1,0.3,0.4,0.3), k2(1,0.3,0.9,0.2);\/\/dodiruju se izvana\n        std::cout << std::boolalpha << DaLiSeSijeku(k1,k2);\n        Kugla k3(1,0.3,0.9,0.19);\/\/ne dodiriju se\n        std::cout << \" \" << DaLiSeSijeku(k3,k1);\n        Kugla k4(1,0.3,0.9,0.2001);\/\/sijeku se\n        std::cout << \" \" << DaLiSeSijeku(k4,k1);\n        Kugla k5(1,0.3,0.3,0.4);\/\/dodirju se iznutra\n        std::cout << \" \" << DaLiSeSijeku(k5,k1);\n        Kugla k6(1,0.3,0.3,0.3);\/\/ove se sijeku\n        std::cout << \" \" << DaLiSeSijeku(k6,k1);\n        Kugla k7(1,0.3,0.3,0.2);\/\/ova se nalazi unutar\n        std::cout << \" \" << DaLiSeSijeku(k7,k1);\n        Kugla k8(1,0.3,0.4,0.3);\/\/identicna\n        std::cout << \" \" << DaLiSeSijeku(k8,k1);\n\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false false true false true false false\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 117,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/\/AT17 - Test metode DaLiSadrzi\n\n    try{\n        Kugla k1(1,0.3,0.4,0.3), k2(1,0.3,0.9,0.2);\n        std::cout << std::boolalpha << k1.DaLiSadrzi(k2);\n        Kugla k3(1,0.3,0.9,0.19);\n        std::cout << \" \" << k1.DaLiSadrzi(k3);\n        Kugla k4(1,0.3,0.9,0.2001);\n        std::cout << \" \" << k1.DaLiSadrzi(k4);\n        Kugla k5(1,0.3,0.3,0.4);\n        std::cout << \" \" << k1.DaLiSadrzi(k5);\n        Kugla k6(1,0.3,0.4,0.2);\n        std::cout << \" \" << k1.DaLiSadrzi(k6);\n        Kugla k7(1,0.3,0.4,0.3);\n        std::cout << \" \" << k1.DaLiSadrzi(k7);\n\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false false false true true true\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 118,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(neaktivni)    AT18 - Provjera da li su prijateljske funkcije definisane van klase\n\/\/    ako se ne kompajlira znaci da su prijateljske funkcije definirane unutar klase\n\/\/    \u0161to je nagla\u0161eno da se ne radi, koga vise interesuje zasto se ovo desava neka\n\/\/    istrazi argument-dependent lookup(ADL)\n\n    try{\n        std::cout << std::boolalpha << DaLiSePreklapaju({1,2,3,4}, {1,2,3,4})\n        << \" \" << DaLiSeSijeku({1,2,3,4}, {1,2,3,4}) << \" \" << DaLiSeDodirujuIznutra({1,2,3,4}, {1,2,3,4})\n        << \" \" << DaLiSuPodudarne({1,2,3,4}, {1,2,3,4}) << \" \" << DaLiSuIdenticne({1,2,3,4}, {1,2,3,4})\n        << \" \" << DaLiSeDodirujuIzvana({1,2,3,4}, {1,2,3,4}) << \" \" << DaLiSuKoncentricne({1,2,3,4}, {1,2,3,4});\n    }\n    catch(...){\n        std::cout << \"IZUZETAK\";\n    }",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "true false false true true false true\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 119,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/(neaktivni)    AT19 Test degeneracije u ta\u010dku\n    try{\n        Kugla k1(8,8,8,0);\n        Kugla k2(8,8,8,0);\n        Kugla k3(8,8,9, 1);\n        Kugla k4(8,11,9, 1+1e-14);\n        std::cout << std::boolalpha << DaLiSeSijeku(k1,k2) << \" \" << DaLiSePreklapaju(k1,k2)\n                  << \" \" << DaLiSeDodirujuIzvana(k1,k2) << \" \" << DaLiSeDodirujuIznutra(k1,k2)\n                  << \" \" << DaLiSeDodirujuIzvana(k2,k3) << \" \" << DaLiSuIdenticne(k1,k2)\n                  << \" \" << RastojanjeCentara(k1,k2) << \" \" << DaLiSuKoncentricne(k1,k2)\n                  << \" \" << k1.DaLiSadrzi(k1) << \" \" << DaLiSuKoncentricne(k1,k2)\n                  << \" \" << DaLiSeDodirujuIzvana(k3, k4) << \" \" << k4.DaLiSadrzi(k3)\n                  << \" \" << DaLiSuPodudarne(k1,k2)\n                  << \"\\nEND\";\n\n    }\n    catch(...){\n        std::cout << \"NOT OK\";\n    }\n",
+            "global_above_main": "",
+            "global_top": "#include <iomanip>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "false false true false true true 0 true true true false false true\\nEND"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 120,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/Testove pisao Dino \u0160atrovi\u0107\n\/\/Sva eventualna pitanja u vezi testova mo\u017eete postaviti u temu\n\/\/za odgovarajuci zadatak na courseware-u predmeta\n\n\/\/u postavci zadatka se potkrala gre\u0161ka, za provjeru jednakosti koristite sljedecu\n\/\/formulu: |x-y| <= eps(|x|+|y|), ova uputa se smatra kao dodatna definicija zadatka\n\n_main();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": "5\n1 2 3\n10\n4 -1 18\n20\n1 2 3\n8\n1 5 6\n3\n11 1 -2\n18\n1 2 -1"
+            },
+            "expected": [
+                "Unesite prirodan broj: Unesite podatke za 1. kugulu  (x,y,z) = Unesite poluprecnik: Unesite podatke za 2. kugulu  (x,y,z) = Unesite poluprecnik: Unesite podatke za 3. kugulu  (x,y,z) = Unesite poluprecnik: Unesite podatke za 4. kugulu  (x,y,z) = Unesite poluprecnik: Unesite podatke za 5. kugulu  (x,y,z) = Unesite poluprecnik: Unesite parametre za translaciju kugli: \\nKugle nakon obavljenih transformacija:\\n{(2,7,5),3}\\n{(2,4,2),8}\\n{(2,4,2),10}\\n{(12,3,-3),18}\\n{(5,1,17),20}\\nKugla sa najvecom povrsinom:\\n{(5,1,17),20}\\nKugle {(2,4,2),8} i {(12,3,-3),18} se sijeku\\nKugle {(2,4,2),10} i {(12,3,-3),18} se sijeku",
+                "Unesite prirodan broj: \\nUnesite podatke za 1. kugulu  (x,y,z) = \\nUnesite poluprecnik: \\nUnesite podatke za 2. kugulu  (x,y,z) = \\nUnesite poluprecnik: \\nUnesite podatke za 3. kugulu  (x,y,z) = \\nUnesite poluprecnik: \\nUnesite podatke za 4. kugulu  (x,y,z) = \\nUnesite poluprecnik: \\nUnesite podatke za 5. kugulu  (x,y,z) = \\nUnesite poluprecnik: \\nUnesite parametre za translaciju kugli: \\n\\nKugle nakon obavljenih transformacija:\\n{(2,7,5),3}\\n{(2,4,2),8}\\n{(2,4,2),10}\\n{(12,3,-3),18}\\n{(5,1,17),20}\\nKugla sa najvecom povrsinom:\\n{(5,1,17),20}\\nKugle {(2,4,2),8} i {(12,3,-3),18} se sijeku\\nKugle {(2,4,2),10} i {(12,3,-3),18} se sijeku"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

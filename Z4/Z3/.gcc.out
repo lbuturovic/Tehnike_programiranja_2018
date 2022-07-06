@@ -1,0 +1,8 @@
+/rhome/l/lbuturovic1/workspace/TP/Z4/Z3/main.cpp: In static member function ‘static int Datum::KolikoDanaIma(int, int)’:
+/rhome/l/lbuturovic1/workspace/TP/Z4/Z3/main.cpp:19:25: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+          if(godina%4==0 && godina % 100 !=0 || godina % 400==0) return 29;
+             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+/rhome/l/lbuturovic1/workspace/TP/Z4/Z3/main.cpp: At global scope:
+/rhome/l/lbuturovic1/workspace/TP/Z4/Z3/main.cpp:34:2: error: specializing member ‘std::tuple<int, int, int>::Datum’ requires ‘template<>’ syntax
+  std::tuple<int, int, int>::Datum()
+  ^~~

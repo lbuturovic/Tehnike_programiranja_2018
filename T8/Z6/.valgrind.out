@@ -1,0 +1,25 @@
+==6075== Memcheck, a memory error detector
+==6075== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==6075== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==6075== Command: /rhome/l/lbuturovic1/workspace/TP/T8/Z6/.runme
+==6075== Parent PID: 6026
+==6075== 
+==6075== 
+==6075== Process terminating with default action of signal 1 (SIGHUP)
+==6075==    at 0x54D7081: read (read.c:27)
+==6075==    by 0x5454147: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:531)
+==6075==    by 0x54553F1: _IO_default_uflow (genops.c:380)
+==6075==    by 0x512B95C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==6075==    by 0x5139739: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==6075==    by 0x513BCCD: std::istream& std::istream::_M_extract<double>(double&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==6075==    by 0x108ACE: Cvor<double>* KreirajPovezanuListu<double>(double) (main.cpp:15)
+==6075==    by 0x1089AE: main (main.cpp:78)
+==6075== 
+==6075== HEAP SUMMARY:
+==6075==     in use at exit: 0 bytes in 0 blocks
+==6075==   total heap usage: 2 allocs, 2 frees, 73,728 bytes allocated
+==6075== 
+==6075== All heap blocks were freed -- no leaks are possible
+==6075== 
+==6075== For counts of detected and suppressed errors, rerun with: -v
+==6075== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

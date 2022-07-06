@@ -1,0 +1,4 @@
+/rhome/l/lbuturovic1/workspace/TP/T4/Z2/main.cpp: In function ‘void IzvrniString(std::__cxx11::string&)’:
+/rhome/l/lbuturovic1/workspace/TP/T4/Z2/main.cpp:12:9: error: ‘slovo2’ was not declared in this scope
+         slovo2=pom;
+         ^~~~~~

@@ -1,0 +1,8 @@
+/rhome/l/lbuturovic1/workspace/TP/T5/Z4/main.cpp: In function ‘bool PKvadrat(int)’:
+/rhome/l/lbuturovic1/workspace/TP/T5/Z4/main.cpp:28:29: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+  return(int(sqrt(x))==sqrt(x));
+                             ^
+/rhome/l/lbuturovic1/workspace/TP/T5/Z4/main.cpp: In lambda function:
+/rhome/l/lbuturovic1/workspace/TP/T5/Z4/main.cpp:52:105: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+  std::cout <<"U deku ima " << std::count_if(br.begin(), br.end(), [] (int x){return(int(sqrt(x))==sqrt(x));} ) << " brojeva koji su potpuni kvadrati" << std::endl;
+                                                                                                         ^

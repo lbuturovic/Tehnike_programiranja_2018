@@ -1,0 +1,34 @@
+==10134== Memcheck, a memory error detector
+==10134== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10134== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==10134== Command: /rhome/l/lbuturovic1/workspace/TP/Z14/Z2/.runme
+==10134== Parent PID: 9678
+==10134== 
+==10134== Conditional jump or move depends on uninitialised value(s)
+==10134==    at 0x4C32D48: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10134==    by 0x5165536: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==10134==    by 0x10C243: Spremnik::Spremnik(double, char const*) (main.cpp:12)
+==10134==    by 0x10C5CD: Bure::Bure(double, char const*, double) (main.cpp:41)
+==10134==    by 0x10ADB4: Skladiste::DodajBure(double, char const*, double) (main.cpp:175)
+==10134==    by 0x10A333: Skladiste::UcitajIzDatoteke(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (main.cpp:108)
+==10134==    by 0x10AFBD: main (main.cpp:191)
+==10134== 
+==10134== Conditional jump or move depends on uninitialised value(s)
+==10134==    at 0x4C32D48: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10134==    by 0x5165536: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==10134==    by 0x10C243: Spremnik::Spremnik(double, char const*) (main.cpp:12)
+==10134==    by 0x10C32C: Sanduk::Sanduk(double, char const*, int, double) (main.cpp:24)
+==10134==    by 0x10AEDA: Skladiste::DodajSanduk(double, char const*, int, double) (main.cpp:182)
+==10134==    by 0x10A45F: Skladiste::UcitajIzDatoteke(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (main.cpp:118)
+==10134==    by 0x10AFBD: main (main.cpp:191)
+==10134== 
+==10134== 
+==10134== HEAP SUMMARY:
+==10134==     in use at exit: 0 bytes in 0 blocks
+==10134==   total heap usage: 13 allocs, 13 frees, 90,636 bytes allocated
+==10134== 
+==10134== All heap blocks were freed -- no leaks are possible
+==10134== 
+==10134== For counts of detected and suppressed errors, rerun with: -v
+==10134== Use --track-origins=yes to see where uninitialised values come from
+==10134== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

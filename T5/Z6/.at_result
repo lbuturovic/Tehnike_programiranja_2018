@@ -1,0 +1,58 @@
+{
+    "buildhost_description": {
+        "id": "lab002c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 3,
+    "compile_result": {
+        "status": 2,
+        "output": "main.cpp: In function \u2018int SumaCifara(int)\u2019:\nmain.cpp:19:1: warning: no return statement in function returning non-void [-Wreturn-type]\n }\n ^\nmain.cpp: In function \u2018int main()\u2019:\nmain.cpp:28:12: error: expected \u2018;\u2019 before string constant\n  std::cout \"Unesite elemente: \"\n            ^~~~~~~~~~~~~~~~~~~~\nmain.cpp:29:64: warning: statement has no effect [-Wunused-value]\n  std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });\n                                                                ^\nmain.cpp:29:65: error: expected primary-expression before \u2018)\u2019 token\n  std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });\n                                                                 ^",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "19",
+                "col": "1",
+                "message": "no return statement in function returning non-void",
+                "output": "\/tmp\/buildservice\/bs_4133\/main.cpp:19:1: warning: no return statement in function returning non-void [-Wreturn-type] } ^",
+                "code": "}"
+            },
+            {
+                "type": "error",
+                "file": "main.cpp",
+                "line": "28",
+                "col": "12",
+                "message": "expected ';' before string constant",
+                "output": "\/tmp\/buildservice\/bs_4133\/main.cpp:28:12: error: expected \u2018;\u2019 before string constant  std::cout \"Unesite elemente: \"            ^~~~~~~~~~~~~~~~~~~~",
+                "code": "std::cout \"Unesite elemente: \""
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "29",
+                "col": "64",
+                "message": "statement has no effect",
+                "output": "\/tmp\/buildservice\/bs_4133\/main.cpp:29:64: warning: statement has no effect [-Wunused-value]  std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });                                                                ^",
+                "code": "std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });"
+            },
+            {
+                "type": "error",
+                "file": "main.cpp",
+                "line": "29",
+                "col": "65",
+                "message": "expected primary-expression before ')' token",
+                "output": "\/tmp\/buildservice\/bs_4133\/main.cpp:29:65: error: expected primary-expression before \u2018)\u2019 token  std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });                                                                 ^",
+                "code": "std::for_each(v.begin(),v.end(), [] (int &x) { std::cin >> x; });"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": [],
+    "queue_items": 0,
+    "time": 1561963240
+}

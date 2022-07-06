@@ -1,0 +1,4 @@
+/rhome/l/lbuturovic1/workspace/TP/T5/Z3/main.cpp: In function ‘bool PKvadrat(int)’:
+/rhome/l/lbuturovic1/workspace/TP/T5/Z3/main.cpp:27:29: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+  return(int(sqrt(x))==sqrt(x));
+                             ^

@@ -1,0 +1,3 @@
+/rhome/l/lbuturovic1/workspace/TP/T10/Z4/main.cpp:148:1: warning: "/*" within comment [-Wcomment]
+ /* while(radijani<0) {
+  

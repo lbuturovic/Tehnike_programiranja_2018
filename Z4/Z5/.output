@@ -1,0 +1,13 @@
+Broj opcije:
+- 1 za unos studenta,
+- 2 za unos laptopa,
+- 3 za pretragu studenta po broju indeksa,
+- 4 za pretragu laptopa po evidencijskom broju,
+- 5 za izlistavanje studenata,
+- 6 za izlistavanje laptopa,
+- 7 za zaduzenje laptopa, 
+- 8 za razduzenje laptopa, 
+- 9 za pretragu slobodnog laptopa, 
+-10 za prikaz zaduzenja,
+- 0 za kraj
+Unesite broj opcije: 

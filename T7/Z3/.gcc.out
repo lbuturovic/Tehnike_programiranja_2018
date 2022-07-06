@@ -1,0 +1,6 @@
+/rhome/l/lbuturovic1/workspace/TP/T7/Z3/main.cpp:21:3: warning: "/*" within comment [-Wcomment]
+   /*std::vector<std::string> rec(n);
+    
+/rhome/l/lbuturovic1/workspace/TP/T7/Z3/main.cpp:35:5: warning: "/*" within comment [-Wcomment]
+     /*std::cout << rec[i];
+      

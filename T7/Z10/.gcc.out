@@ -1,0 +1,3 @@
+/rhome/l/lbuturovic1/workspace/TP/T7/Z10/main.cpp:13:2: warning: "/*" within comment [-Wcomment]
+  /*int m=n;
+   

@@ -1,0 +1,7 @@
+/rhome/l/lbuturovic1/workspace/TP/ZSR1/Z3/main.cpp: In function ‘int main()’:
+/rhome/l/lbuturovic1/workspace/TP/ZSR1/Z3/main.cpp:27:13: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+     if(pom==br && pom>0) {
+             ^~
+/rhome/l/lbuturovic1/workspace/TP/ZSR1/Z3/main.cpp:32:13: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+     if(pom==br && pom<=0) {
+             ^~
